@@ -9,8 +9,7 @@
     },
     "plugins": [
         "@typescript-eslint",
-        "import",
-        "simple-import-sort"
+        "import"
     ],
     "rules": {
         "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -92,10 +91,6 @@
         ],
         "guard-for-in": "error",
         "id-blacklist": "off",
-        // "simple-import-sort/sort": "error",
-        // "import/no-extraneous-dependencies": "on", // imports are handled by simple-import-sort/sort
-        // "import/no-internal-modules": "on", // imports are handled by simple-import-sort/sort
-        // "import/order": "on", // imports are handled by simple-import-sort/sort
         "linebreak-style": "off",
         "max-classes-per-file": "off",
         "max-len": "off",
@@ -173,10 +168,6 @@
         "prefer-object-spread": "error",
         "quote-props": "off",
         "radix": "error",
-        // "simple-import-sort/sort": [
-        //     "error"
-        // ],
-        // "sort-imports": "on", // imports are handled by simple-import-sort/sort
         "sort-keys": "off",
         "space-before-function-paren": "off",
         "spaced-comment": "error",
