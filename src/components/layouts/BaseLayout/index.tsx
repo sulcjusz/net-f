@@ -6,7 +6,7 @@ import {IBaseLayoutProps} from './types'
 const BaseLayout: React.FC<IBaseLayoutProps> = ({children}) => (
   <>
     <PageHeader />
-    <main className="overflow-auto">{children}</main>
+    <div className="overflow-auto">{children}</div>
     <PageFooter />
   </>
 )

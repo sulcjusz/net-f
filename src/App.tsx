@@ -1,5 +1,6 @@
 import React from 'react'
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import HomePage from './components/pages/HomePage'
 import BaseLayout from './components/layouts/BaseLayout'
 
 function App() {
@@ -7,10 +8,7 @@ function App() {
     <Router>
       <BaseLayout>
         <Routes>
-          <Route
-            path="/"
-            element={<div className="min-h-[1000px] bg-grey-600 "></div>}
-          />
+          <Route path="/" element={<HomePage />} />
         </Routes>
       </BaseLayout>
     </Router>

@@ -10,7 +10,7 @@ const NavBar: React.FC<INavBarProps> = ({
 }) => (
   <div
     className={classNames(
-      'grid grid-cols-3 items-center px-20 py-5 bg-grey-100 ',
+      'grid grid-cols-3 items-center px-20 py-5 bg-grey-100',
       className
     )}
   >

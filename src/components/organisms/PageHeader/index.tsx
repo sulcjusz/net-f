@@ -13,7 +13,7 @@ import TextLink from '../../atoms/TextLink'
 
 const PageHeader: React.FC = () => (
   <>
-    <div className="fixed top-0 left-0 w-full">
+    <div className="sticky top-0 w-full z-10">
       <AdvertBar>
         <p className="font-inter text-base font-medium leading-17 tracking-[0.07em] text-left">
           NEW CUSTOMERS GET 15% OFF! USE CODE{' '}
@@ -58,7 +58,7 @@ const PageHeader: React.FC = () => (
         centerSlot={<LogoIcon />}
         rightSlot={
           <ButtonGroup>
-            <IconButton icon={<BasketIcon />} size="small" isActive={false} />
+            <IconButton icon={<BasketIcon />} size="small" />
             <IconButton icon={<PersonIcon />} size="small" />
             <IconButton icon={<SearchIcon />} size="small" />
           </ButtonGroup>

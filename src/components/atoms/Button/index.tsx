@@ -23,7 +23,7 @@ const Button: React.FC<IButtonProps> = ({
   )
 
   return (
-    <button className={buttonClasses} onClick={onClick}>
+    <button className={buttonClasses} onClick={onClick} disabled={isActive}>
       {children}
     </button>
   )

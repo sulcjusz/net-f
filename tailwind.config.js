@@ -39,7 +39,9 @@ export default {
           'border-color': '#443B3B',
         },
         '.text-linear-gradient-primary': {
-          'color': 'linear-gradient(90deg, #CAEA71 0%, #844071 50.5%, #404F84 100%)',
+          'background': 'linear-gradient(90deg, #CAEA71 0%, #844071 50.5%, #404F84 100%)',
+          '-webkit-background-clip': 'text',
+          '-webkit-text-fill-color': 'transparent',
         },
         '.bg-linear-gradient-primary': {
           'background': 'linear-gradient(90deg, #CAEA71 0%, #844071 50.5%, #404F84 100%)',
