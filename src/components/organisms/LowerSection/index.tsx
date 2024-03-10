@@ -24,7 +24,7 @@ const LowerSection: React.FC<ILowerSectionProps> = ({
         <div className="flex-grow">
           <p
             className="cursor-pointer underline underline-offset-4 font-inter text-sm
-                    font-semibold leading-17 tracking-[0.07em] text-grey-600 hover:opacity-60"
+                    font-semibold leading-[16.94px] tracking-[0.07em] text-slate-800 hover:opacity-60"
             onClick={onSeeMoreClick}
           >
             {seeMoreText}

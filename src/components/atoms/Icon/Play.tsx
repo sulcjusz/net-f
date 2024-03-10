@@ -1,13 +1,12 @@
 import React from 'react'
 import Icon from './index'
-import PlayArrowIcon from '@mui/icons-material/PlayArrow'
-
-interface PersonIconProps extends React.HTMLAttributes<HTMLElement> {
+import Play from '../../../assets/icons/Play.svg'
+interface PlayIconProps extends React.HTMLAttributes<HTMLElement> {
   className?: string
 }
 
-const PlayIcon: React.FC<PersonIconProps> = ({className, ...props}) => (
-  <Icon {...props} component={PlayArrowIcon} className={className} />
+const PlayIcon: React.FC<PlayIconProps> = ({className, ...props}) => (
+  <Icon {...props} component={() => <img src={Play} />} className={className} />
 )
 
 export default PlayIcon

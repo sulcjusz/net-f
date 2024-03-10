@@ -15,7 +15,7 @@ const PageHeader: React.FC = () => (
   <>
     <div className="sticky top-0 w-full z-10">
       <AdvertBar>
-        <p className="font-inter text-base font-medium leading-17 tracking-[0.07em] text-left">
+        <p className="font-inter text-base font-normal text-grey-700 leading-[16.94px] tracking-[0.07em] text-left">
           NEW CUSTOMERS GET 15% OFF! USE CODE{' '}
           <TextLink
             text="WELCOME15"

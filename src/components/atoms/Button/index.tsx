@@ -10,13 +10,13 @@ const Button: React.FC<IButtonProps> = ({
   children
 }) => {
   const buttonClasses = classnames(
-    'rounded-md border border-grey-medium font-exo leading-5 tracking-[.07em] text-center flex items-center justify-center',
+    'rounded-md border border-grey-medium font-exo leading-[18.61px] tracking-[.07em] text-center flex items-center justify-center',
     {
       'text-grey-600 bg-grey-200 font-exo font-semibold': isActive,
       'text-grey-600 bg-grey-300 font-medium hover:bg-opacity-50 hover:border-grey-medium':
         !isActive,
-      'text-base py-2 px-7': size === 'small',
-      'text-xl py-3 px-8': size === 'medium',
+      'text-sm py-2 px-7': size === 'small',
+      'text-base py-3 px-8': size === 'medium',
       'pointer-events-none': isActive
     },
     className

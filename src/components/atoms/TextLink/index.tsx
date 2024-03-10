@@ -3,7 +3,7 @@ import classnames from 'classnames'
 import {ITextLinkProps} from './types'
 
 const TextLink: React.FC<ITextLinkProps> = ({text, onClick, className}) => {
-  const linkClasses = classnames('text-blue-800 cursor-pointer', className)
+  const linkClasses = classnames('text-blue-dark cursor-pointer', className)
 
   return (
     <span className={linkClasses} onClick={onClick}>

@@ -12,7 +12,9 @@ export default {
         exo: ['Exo', 'sans-serif'],
       },
       colors: {
-
+        blue: {
+          dark: "#404F84"
+        },
         grey: {
           50: "#ECECEC",
           100: "#E8E8E8",
@@ -28,6 +30,7 @@ export default {
           lime: "#CAE771"
         },
         slate: {
+          800: "#41423E",
           900: "#101215",
           950: "#030202"
         },

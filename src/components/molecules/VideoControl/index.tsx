@@ -25,17 +25,19 @@ const VideoControl: React.FC<IVideoControlProps> = ({
   }
 
   return (
-    <div className="flex items-center space-x-5 justify-between py-4 px-4 w-full rounded-[10px] border border-white border-opacity-20 bg-slate-900 bg-opacity-30">
+    <div className="flex items-center space-x-5 justify-between min-h-[94.3px] py-4 px-4 w-full rounded-[10px] border border-white border-opacity-20 bg-slate-900 bg-opacity-30">
       {isPlaying ? (
         <>
           <IconButton
             icon={
-              <div className="flex items-center justify-center w-3 h-3">
-                <PauseIcon className="text-yellow-lime w-1" />
+              <div className="flex items-center justify-center text-center w-8 h-8">
+                <div className="w-4 h-4">
+                  <PauseIcon />
+                </div>
               </div>
             }
             onClick={togglePlay}
-            className="bg-slate-900 border-0 "
+            className="bg-slate-900 border-0 p-0 ml-4"
             size="small"
           />
         </>
@@ -43,12 +45,14 @@ const VideoControl: React.FC<IVideoControlProps> = ({
         <>
           <IconButton
             icon={
-              <div className="flex items-center justify-center  w-3 h-3">
-                <PlayIcon className="text-yellow-lime w-1 h-3" />
+              <div className="flex items-center justify-center text-center w-8 h-8">
+                <div className="w-4 h-4">
+                  <PlayIcon />
+                </div>
               </div>
             }
             onClick={togglePlay}
-            className="bg-slate-900 border-0 "
+            className="bg-slate-900 border-0 p-0 ml-4"
             size="small"
           />
         </>

@@ -9,11 +9,10 @@ const Chip: React.FC<IChipProps> = ({
   children
 }) => {
   const buttonClasses = classnames(
-    'rounded-xl border border-grey-dark font-exo leading-5 tracking-[.07em] text-center flex items-center justify-center',
+    'rounded-xl border border-grey-dark font-exo text-[12px] leading-4 tracking-[.07em] text-center flex items-center justify-center',
     {
-      'text-xs py-2 px-3': size === 'small',
-      'text-xl py-3 px-4 font-exo text-xs font-medium leading-6  text-center':
-        size === 'medium',
+      'w-[133.07px] h-[44.1px] ': size === 'small',
+      'w-[163px] h-[53.53px] font-medium': size === 'medium',
       'text-grey-600': textColor === 'black',
       'text-white': textColor === 'white'
     },
