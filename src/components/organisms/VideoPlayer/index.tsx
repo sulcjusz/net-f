@@ -1,5 +1,8 @@
-import React, {useRef, useState, useEffect} from 'react'
+import React, {useState, useRef} from 'react'
+import ReactPlayer from 'react-player'
 import classnames from 'classnames'
+import VideoControl from '../../molecules/VideoControl'
+import HeroContentWrapper from '../../molecules/HeroContentWrapper'
 import {IVideoPlayerProps} from './types'
 
 const VideoPlayer: React.FC<IVideoPlayerProps> = ({
@@ -7,136 +10,63 @@ const VideoPlayer: React.FC<IVideoPlayerProps> = ({
   className,
   children
 }) => {
-  const videoRef = useRef<HTMLVideoElement>(null)
+  const playerRef = useRef<ReactPlayer>(null)
   const [isPlaying, setIsPlaying] = useState(false)
   const [progress, setProgress] = useState(0)
   const [duration, setDuration] = useState(0)
-  const [currentTime, setCurrentTime] = useState(0)
 
-  useEffect(() => {
-    const videoElement = videoRef.current
-    if (videoElement) {
-      setDuration(videoElement.duration)
-
-      const updateTime = () => {
-        setCurrentTime(videoElement.currentTime)
-      }
-
-      videoElement.addEventListener('timeupdate', updateTime)
-
-      return () => {
-        videoElement.removeEventListener('timeupdate', updateTime)
-      }
-    }
-  }, [videoRef])
-
-  const togglePlay = () => {
-    if (videoRef.current) {
-      if (videoRef.current.paused) {
-        videoRef.current.play()
-        setIsPlaying(true)
-      } else {
-        videoRef.current.pause()
-        setIsPlaying(false)
-      }
-    }
+  const handlePlay = () => {
+    setIsPlaying(true)
   }
 
-  const updateProgress = () => {
-    if (videoRef.current) {
-      const currentTime = videoRef.current.currentTime
-      const progressPercent = (currentTime / duration) * 100
-      setProgress(progressPercent)
-    }
+  const handlePause = () => {
+    setIsPlaying(false)
   }
 
-  const handleSeek = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (videoRef.current) {
-      const seekTime = (parseFloat(event.target.value) / 100) * duration
-      videoRef.current.currentTime = seekTime
+  const handleDuration = (duration: number) => {
+    setDuration(duration)
+  }
+
+  const handleSeek = (value: number) => {
+    const seekTime = (value / 100) * duration
+    if (playerRef.current) {
+      playerRef.current.seekTo(seekTime, 'seconds')
+      setProgress(seekTime)
     }
   }
 
   return (
     <div className={classnames('relative', className)}>
-      <video
-        ref={videoRef}
-        src={url}
-        className="w-full h-full object-cover"
-        onTimeUpdate={updateProgress}
-        onEnded={() => setIsPlaying(false)}
-      ></video>
-      <div className="absolute inset-0 flex flex-col justify-center">
+      <div className="absolute inset-0 bg-black opacity-40" />
+      <ReactPlayer
+        url={url}
+        playing={isPlaying}
+        className="react-player"
+        ref={playerRef}
+        width="100%"
+        height="100%"
+        onPlay={handlePlay}
+        onPause={handlePause}
+        onProgress={progress => setProgress(progress.playedSeconds)}
+        onDuration={handleDuration}
+        controls={false}
+      />
+      <HeroContentWrapper>
         {children && (
-          <div className="flex items-center justify-center">{children}</div>
+          <div className="flex items-center justify-start">{children}</div>
         )}
-        <div className="flex items-center justify-center w-full">
-          <button className="text-white text-4xl" onClick={togglePlay}>
-            {isPlaying ? 'Pause' : 'Play'}
-          </button>
-          <input
-            type="range"
-            min="0"
-            max="100"
-            value={progress}
-            className="slider  w-3/4 bg-gray-300 rounded-full h-2 ml-4"
-            onChange={handleSeek}
-          />
 
-          <div className="text-white">
-            {Math.round(duration - currentTime)}s remaining
-          </div>
-        </div>
-      </div>
+        <VideoControl
+          key={progress}
+          isPlaying={isPlaying}
+          progress={progress}
+          duration={duration}
+          togglePlay={() => setIsPlaying(!isPlaying)}
+          handleSeek={handleSeek}
+        />
+      </HeroContentWrapper>
     </div>
   )
 }
 
 export default VideoPlayer
-
-// import React, { useState } from 'react';
-// import classnames from 'classnames';
-// import ReactPlayer from 'react-player';
-// import { IVideoPlayerProps } from './types';
-
-// const VideoPlayer: React.FC<IVideoPlayerProps> = ({ url, className }) => {
-//     const [playing, setPlaying] = useState<boolean>(false);
-//     const [played, setPlayed] = useState<number>(0);
-
-//     const handlePlayPause = () => {
-//         setPlaying(!playing);
-//     };
-
-//     const handleProgress = (progress: { played: number }) => {
-//         setPlayed(progress.played);
-//     };
-//     const videoPlayerClasses = classnames(
-//         "items-center px-20 py-5 bg-grey-100 absolute bottom-0 left-0 w-full min-h-[356px] flex flex-col justify-around ",
-//         className
-//     )
-
-//     return (
-//         <div>
-//             <ReactPlayer
-//                 url={url}
-//                 playing={playing}
-//                 onPlay={() => setPlaying(true)}
-//                 onPause={() => setPlaying(false)}
-//                 onProgress={handleProgress}
-//             />
-//             <div>
-//                 <button onClick={handlePlayPause}>{playing ? 'Pause' : 'Play'}</button>
-//                 <input
-//                     type="range"
-//                     min={0}
-//                     max={1}
-//                     step="any"
-//                     value={played}
-//                     onChange={(e) => setPlayed(parseFloat(e.target.value))}
-//                 />
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default VideoPlayer;

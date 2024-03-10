@@ -17,11 +17,19 @@ export default {
           50: "#ECECEC",
           100: "#E8E8E8",
           200: "#E5E5DF",
+          250: "#C9C4C1",
           300: "#D9D9D9",
           400: "#5F5959",
           500: "#443B3B",
           600: "#1C1B1B",
           700: "#111010"
+        },
+        yellow: {
+          lime: "#CAE771"
+        },
+        slate: {
+          900: "#101215",
+          950: "#030202"
         },
         borderColor: theme => ({
           ...theme('colors.grey'),

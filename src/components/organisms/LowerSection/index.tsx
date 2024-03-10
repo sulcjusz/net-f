@@ -14,7 +14,6 @@ const LowerSection: React.FC<ILowerSectionProps> = ({
     'items-center px-2 py-5 bg-grey-100  w-full min-h-[356px] flex flex-col justify-around ',
     className
   )
-  // absolute bottom-0 left-0
   return (
     <div className={lowerSectionClasses}>
       <div className="flex flex-col items-center space-y-10 py-8 h-full justify-around">
