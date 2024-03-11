@@ -1,6 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
-import {IIconButtonProps} from './types'
+import { IIconButtonProps } from './types'
 
 const IconButton: React.FC<IIconButtonProps> = ({
   onClick,
@@ -15,8 +15,8 @@ const IconButton: React.FC<IIconButtonProps> = ({
       'text-grey-400 bg-grey-200 font-semibold': disabled,
       'text-grey-400 bg-grey-300 font-medium hover:bg-opacity-50 hover:border-grey-medium':
         !disabled,
-      'text-base w-[43px] h-[43px]': size === 'small',
-      'text-xl py-4 px-4': size === 'medium',
+      'text-base p-2': size === 'small',
+      'text-xl p-4': size === 'medium',
       'pointer-events-none': disabled
     },
     className

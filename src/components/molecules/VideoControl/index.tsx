@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import PlayIcon from '../../atoms/Icon/Play'
 import PauseIcon from '../../atoms/Icon/Pause'
 import IconButton from '../../atoms/IconButton'
-import {IVideoControlProps} from './types'
+import { IVideoControlProps } from './types'
 
 const VideoControl: React.FC<IVideoControlProps> = ({
   isPlaying,
@@ -37,8 +37,8 @@ const VideoControl: React.FC<IVideoControlProps> = ({
               </div>
             }
             onClick={togglePlay}
-            className="bg-slate-900 border-0 p-0 ml-4"
-            size="small"
+            className="bg-slate-900 border-0 ml-4 w-[48.61px] h-[48.61px]"
+            size='small'
           />
         </>
       ) : (
@@ -52,8 +52,8 @@ const VideoControl: React.FC<IVideoControlProps> = ({
               </div>
             }
             onClick={togglePlay}
-            className="bg-slate-900 border-0 p-0 ml-4"
-            size="small"
+            className="bg-slate-900 border-0 ml-4 w-[48.61px] h-[48.61px]"
+            size='small'
           />
         </>
       )}

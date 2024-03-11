@@ -58,9 +58,9 @@ const PageHeader: React.FC = () => (
         centerSlot={<LogoIcon />}
         rightSlot={
           <ButtonGroup>
-            <IconButton icon={<BasketIcon />} size="small" />
-            <IconButton icon={<PersonIcon />} size="small" />
-            <IconButton icon={<SearchIcon />} size="small" />
+            <IconButton icon={<BasketIcon />} size="small" className='w-[43px] h-[43px]' />
+            <IconButton icon={<PersonIcon />} size="small" className='w-[43px] h-[43px]' />
+            <IconButton icon={<SearchIcon />} size="small" className='w-[43px] h-[43px]' />
           </ButtonGroup>
         }
       />
