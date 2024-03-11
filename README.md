@@ -1,30 +1,23 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This app is built with React + TypeScript + Vite. [Tailwind css](https://tailwindcss.com/) is used for styling. To achieve styles consistency commonly used colors are defined in `tailwind.config.js`
 
-Currently, two official plugins are available:
+### Run
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To start locally run:
+```
+  npm run dev
+```
+The app will be available on: http://localhost:3000/
 
-## Expanding the ESLint configuration
+### Code Style
+The code-style is enforced through eslint and prettier.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+To check style and fix fromatting run:
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```
+  npm run lint
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+#### Components
+This project follows the [atomic design](https://atomicdesign.bradfrost.com/chapter-2/) structure to organize the components.
