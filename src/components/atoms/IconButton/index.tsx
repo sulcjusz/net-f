@@ -1,6 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
-import { IIconButtonProps } from './types'
+import {IIconButtonProps} from './types'
 
 const IconButton: React.FC<IIconButtonProps> = ({
   onClick,
