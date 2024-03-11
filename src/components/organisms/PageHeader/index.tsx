@@ -30,7 +30,7 @@ const PageHeader: React.FC = () => (
           <ButtonGroup>
             <Button
               size="small"
-              isActive={true}
+              disabled={true}
               onClick={() => {
                 /* Empty placeholder */
               }}

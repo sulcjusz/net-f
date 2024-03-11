@@ -1,7 +1,7 @@
 export interface IIconButtonProps {
   onClick?: () => void
   size?: 'small' | 'medium'
-  isActive?: boolean
+  disabled?: boolean
   icon: React.ReactNode
   className?: string
 }

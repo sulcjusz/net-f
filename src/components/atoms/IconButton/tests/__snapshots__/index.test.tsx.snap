@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IconButton component should match the snapshot 1`] = `
+<button
+  class="rounded-full border border-grey-medium font-exo leading-5 tracking-[.07em] text-center text-grey-400 bg-grey-300 font-medium hover:bg-opacity-50 hover:border-grey-medium text-xl py-4 px-4"
+>
+  <svg />
+</button>
+`;

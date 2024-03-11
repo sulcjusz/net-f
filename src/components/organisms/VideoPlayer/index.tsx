@@ -50,6 +50,7 @@ const VideoPlayer: React.FC<IVideoPlayerProps> = ({
         onProgress={progress => setProgress(progress.playedSeconds)}
         onDuration={handleDuration}
         controls={false}
+        muted={true}
       />
       <HeroContentWrapper>
         {children && (
