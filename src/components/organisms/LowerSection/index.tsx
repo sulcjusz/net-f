@@ -1,7 +1,7 @@
 import React from 'react'
 import classnames from 'classnames'
 import Chip from '../../atoms/Chip'
-import {ILowerSectionProps} from './types'
+import { ILowerSectionProps } from './types'
 
 const LowerSection: React.FC<ILowerSectionProps> = ({
   title,
@@ -11,7 +11,7 @@ const LowerSection: React.FC<ILowerSectionProps> = ({
   className
 }) => {
   const lowerSectionClasses = classnames(
-    'items-center px-2 py-5 bg-grey-100  w-full min-h-[356px] flex flex-col justify-around ',
+    'items-center px-2 py-5 bg-grey-50  w-full min-h-[356px] flex flex-col justify-around ',
     className
   )
   return (
